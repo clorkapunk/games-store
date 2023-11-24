@@ -1,0 +1,14 @@
+.typebar {
+
+}
+
+.typebarItem {
+    background: #212529 !important;
+    color: white;
+    border: 0px;
+}
+
+#activeTypeBarTab {
+    background: white !important;
+    color: black;
+}
