@@ -1,14 +1,27 @@
-.typebar {
-
-}
-
-.typebarItem {
-    background: #212529 !important;
-    color: white;
-    border: 0px;
+.typebarItem:hover {
+    opacity: 1 !important;
+    transition: all 0.1s;
 }
 
 #activeTypeBarTab {
-    background: white !important;
-    color: black;
+    opacity: 1 !important;
 }
+
+#main_cont {
+    font-family: 'Exo 2', sans-serif !important;
+}
+
+.consoleItem:hover {
+    box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1);
+    transition: all 0.2s;
+}
+
+.basketItem {
+    background: #202020;
+    border: 0 !important;
+    color: white !important;
+    display: flex;
+    align-items: center;
+    font-size: 1.2em;
+}
+

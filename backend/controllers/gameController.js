@@ -8,11 +8,17 @@ class GameController {
     async create(req, res, next){
         try{
             const {title, year, tags, price, description} = req.body
-            const {img} = req.files
+            const {cardImg, mainImg, smallImg} = req.files
             const tagsParsed = JSON.parse(tags)
             let fileName = uuid.v4() + ".jpg"
-            await img.mv(path.resolve(__dirname, "..", "static", fileName))
-            const game = await Game.create({title, img: fileName, year, tags: tagsParsed, description, price})
+            await cardImg.mv(path.resolve(__dirname, "..", "static", fileName))
+            let fileName2 = uuid.v4() + ".jpg"
+            await mainImg.mv(path.resolve(__dirname, "..", "static", fileName2))
+            let fileName3 = uuid.v4() + ".jpg"
+            await smallImg.mv(path.resolve(__dirname, "..", "static", fileName3))
+            const game = await Game.create({
+                title, cardImg: fileName, mainImg: fileName2, smallImg: fileName3,
+                year, tags: tagsParsed, description, price})
             return res.json(game)
         }
         catch (e){

@@ -5,7 +5,9 @@ import {createGame} from "../../http/contentAPI";
 const CreateGame = ({show, onHide}) => {
     const [data, setData] = useState({
         title: "",
-        img: null,
+        cardImg: null,
+        mainImg: null,
+        smallImg: null,
         year: "",
         description: "",
         tags: "",
@@ -17,7 +19,7 @@ const CreateGame = ({show, onHide}) => {
         setData(prevState => {
             return {
                 ...prevState,
-                [name]: name === "img" ? files[0] : value
+                [name]: (name === 'cardImg' || name === 'smallImg' || name === 'mainImg') ? files[0] : value
             }
         })
     }
@@ -28,7 +30,9 @@ const CreateGame = ({show, onHide}) => {
         formData.append('title', data.title)
         formData.append('price', data.price)
         formData.append('description', data.description)
-        formData.append('img', data.img)
+        formData.append('cardImg', data.cardImg)
+        formData.append('mainImg', data.mainImg)
+        formData.append('smallImg', data.smallImg)
         formData.append('tags', JSON.stringify(data.tags.split(/\s+/)))
         formData.append('year', data.year)
         createGame(formData).then(data => onHide())
@@ -62,7 +66,19 @@ const CreateGame = ({show, onHide}) => {
                         type="file"
                         style={{marginBlock: 10}}
                         onChange={onChangeHandler}
-                        name="img"
+                        name="cardImg"
+                    />
+                    <Form.Control
+                        type="file"
+                        style={{marginBlock: 10}}
+                        onChange={onChangeHandler}
+                        name="mainImg"
+                    />
+                    <Form.Control
+                        type="file"
+                        style={{marginBlock: 10}}
+                        onChange={onChangeHandler}
+                        name="smallImg"
                     />
                     <Form.Control
                         style={{marginBlock: 10}}

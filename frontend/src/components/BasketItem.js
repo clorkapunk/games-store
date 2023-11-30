@@ -12,6 +12,7 @@ const BasketItem = ({itemId, type, onCostChange, onDeleteHandler}) => {
         title: "",
         year: "",
         description: "",
+        smallImg: "",
         img: "",
         tags: [],
         price: ""
@@ -55,26 +56,26 @@ const BasketItem = ({itemId, type, onCostChange, onDeleteHandler}) => {
 
     return (
         <ListGroup horizontal style={{width: "100%"}} className="mt-2">
-            <ListGroup.Item style={{width: "15%", borderColor: "black", padding: 3}} variant="light">
-                <Image src={'http://localhost:4444/' + item.img}
-                       style={{width: "100%", height: 100, objectFit: "cover", borderRadius: "5px 0px 0px 5px",}}/>
+            <ListGroup.Item className="basketItem" style={{width: "15%", borderColor: "black", padding: 3}} variant="light">
+                <Image src={'http://localhost:4444/' + (type === 'game' ? item.mainImg : item.img)}
+                       style={{width: "100%", height: 100, objectFit: "cover", padding: 5}}/>
             </ListGroup.Item>
-            <ListGroup.Item style={{width: "25%", borderColor: "black"}} variant="light">
+            <ListGroup.Item className="basketItem" style={{width: "35%", borderColor: "black"}} variant="light">
                 {item.title}
             </ListGroup.Item>
-            <ListGroup.Item style={{width: "15%", borderColor: "black", display: "flex", justifyContent: "center"}}
+            <ListGroup.Item className="basketItem" style={{width: "15%", borderColor: "black", display: "flex", justifyContent: "center"}}
                             variant="light">
                 {item.price}
             </ListGroup.Item>
-            <ListGroup.Item style={{
-                width: "15%",
+            <ListGroup.Item className="basketItem" style={{
+                width: "10%",
                 borderColor: "black",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
                 flexShrink: 0
             }} variant="light">
-                <Button onClick={changeAmount} name="decrement" variant="outline-dark" style={{
+                <Button onClick={changeAmount} name="decrement" variant="outline-light" style={{
                     height: 20,
                     width: 20,
                     padding: 0,
@@ -83,7 +84,7 @@ const BasketItem = ({itemId, type, onCostChange, onDeleteHandler}) => {
                     alignItems: "center"
                 }}>-</Button>
                 <div className="d-flex justify-content-center align-items-center mx-2">{amount}</div>
-                <Button onClick={changeAmount} name="increment" variant="outline-dark" style={{
+                <Button onClick={changeAmount} name="increment" variant="outline-light" style={{
                     height: 20,
                     width: 20,
                     padding: 0,
@@ -92,47 +93,16 @@ const BasketItem = ({itemId, type, onCostChange, onDeleteHandler}) => {
                     alignItems: "center"
                 }}>+</Button>
             </ListGroup.Item>
-            <ListGroup.Item style={{width: "20%", borderColor: "black"}} variant="light">
+            <ListGroup.Item className="basketItem" style={{width: "15%", borderColor: "black"}} variant="light">
                 {item.price === "Free" ? "0" : (Number.parseFloat(item.price) * amount)} KZT
             </ListGroup.Item>
-            <ListGroup.Item style={{width: "10%", borderColor: "black"}} variant="light">
-                <Button onClick={deleteItem}>
-                    <Image src={deleteIcon}/>
+            <ListGroup.Item className="basketItem" style={{width: "10%", borderColor: "black"}} variant="light">
+                <Button onClick={deleteItem} variant="outline-danger">
+                    DELETE
                 </Button>
             </ListGroup.Item>
         </ListGroup>
 
-        // <Table className="mt-3 mb-0" style={{border: '1px solid black', borderCollapse: "collapse", borderRadius: 10}}>
-        //     <tbody>
-        //     <tr>
-        //         <td style={{border: '1px solid black', borderCollapse: "collapse", width: 200}}>
-        //             <Image src={'http://localhost:4444/' + item.img}
-        //                    style={{width: "100%", height: 100, objectFit: "cover"}}/>
-        //         </td>
-        //         <td style={{border: '1px solid black', borderCollapse: "collapse", width: 300}}>
-        //             {item.title}
-        //         </td>
-        //         <td style={{border: '1px solid black', borderCollapse: "collapse", width: 200}}>
-        //             {item.price}
-        //         </td>
-        //         <td style={{border: '1px solid black', borderCollapse: "collapse", width: 200}}>
-        //             <div className="d-flex">
-        //                 <Button onClick={changeAmount} name="decrement">-</Button>
-        //                 <div>{amount}</div>
-        //                 <Button onClick={changeAmount} name="increment">+</Button>
-        //             </div>
-        //         </td>
-        //         <td style={{border: '1px solid black', borderCollapse: "collapse", width: 200}}>
-        //             {item.price === "Free" ? "0" : (Number.parseFloat(item.price) * amount)} KZT
-        //         </td>
-        //         <td style={{border: '1px solid black', borderCollapse: "collapse", width: 100}}>
-        //             <Button onClick={deleteItem}>
-        //                 <Image src={deleteIcon}/>
-        //             </Button>
-        //         </td>
-        //     </tr>
-        //     </tbody>
-        // </Table>
     );
 };
 

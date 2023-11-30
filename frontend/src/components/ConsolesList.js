@@ -9,7 +9,7 @@ const ConsolesList = observer(({addItemToBasket}) => {
     const {content} = useContext(Context)
 
     return (
-        <Row className="d-flex">
+        <Row className="d-flex justify-content-between">
             {content.consoles.map(console =>
                 <ConsoleItem key={console._id} console={console} onAddItemHandler={addItemToBasket}/>
             )}

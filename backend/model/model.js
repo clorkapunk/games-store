@@ -12,7 +12,9 @@ const userSchema = new mongoose.Schema({
 
 const gameSchema = new mongoose.Schema({
     title: String,
-    img: String,
+    cardImg: String,
+    mainImg: String,
+    smallImg: String,
     year: String,
     tags: [],
     description: {

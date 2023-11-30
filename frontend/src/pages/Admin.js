@@ -7,9 +7,9 @@ const Admin = () => {
     const [gameVisible, setGameVisible] = useState(false)
     const [consoleVisible, setConsoleVisible] = useState(false)
     return (
-        <Container className="d-flex flex-column">
-            <Button className="mt-2 w-25 mx-auto" onClick={() => setGameVisible(true)} variant="outline-dark">Add new game</Button>
-            <Button className="mt-2 w-25 mx-auto" onClick={() => setConsoleVisible(true)} variant="outline-dark" >Add new console</Button>
+        <Container className="d-flex flex-column" style={{minHeight: '100vh'}}>
+            <Button className="mt-2 w-25 mx-auto" onClick={() => setGameVisible(true)} variant="outline-light">Add new game</Button>
+            <Button className="mt-2 w-25 mx-auto" onClick={() => setConsoleVisible(true)} variant="outline-light" >Add new console</Button>
             <CreateGame show={gameVisible} onHide={() => setGameVisible(false)}/>
             <CreateConsole show={consoleVisible} onHide={() => setConsoleVisible(false)}/>
         </Container>

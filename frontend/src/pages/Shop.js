@@ -26,17 +26,16 @@ const Shop = observer(() => {
 
 
     return (
-        <Container>
-            <Row className="mt-2">
-                <Col md={3}>
-                    <TypeBar/>
-                </Col>
-                <Col md={9}>
+        <Container style={{minHeight: "100vh"}}>
+            <div>
+                <div style={{position: 'sticky', top: 0, zIndex: 999}}>
+                    <TypeBar />
+                </div>
+                <div>
                     {content.selectedType.title === "Games" && <GamesList addItemToBasket={addItemToBasket}/>}
                     {content.selectedType.title === "Consoles" && <ConsolesList addItemToBasket={addItemToBasket}/>}
-                </Col>
-            </Row>
-
+                </div>
+            </div>
         </Container>
     );
 });

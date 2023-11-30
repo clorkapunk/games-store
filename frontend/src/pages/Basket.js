@@ -26,7 +26,7 @@ const Basket = observer(() => {
     }
 
     return (
-        <Container className="w-75 p-0">
+        <Container className="w-75 p-0" style={{minHeight: '100vh'}}>
             <Row className="d-flex">
                 <BasketList onDelete={deleteHandle}/>
             </Row>

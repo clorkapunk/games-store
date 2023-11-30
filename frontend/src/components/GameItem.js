@@ -22,18 +22,6 @@ const GameItem = ({game, onAddItemHandler}) => {
         borderRadius: 10
     })
 
-    const [cartTextStyle, setCartTextStyle] = useState({
-        fontSize: "0.85rem",
-        background: "#212529",
-        color: "white",
-        paddingInline: 10,
-        borderRadius: 5,
-        marginRight: 5,
-        opacity: 0,
-        display: "flex",
-        transition: "opacity 0.3s"
-    })
-
     const renderTooltip = (props) => (
         <Tooltip id="button-tooltip" {...props}>
             Add to cart
@@ -44,8 +32,8 @@ const GameItem = ({game, onAddItemHandler}) => {
     const navigate = useNavigate()
 
     return (
-        <Col md={3} className="mt-4 mb-3">
-            <Card style={{width: 200, cursor: "pointer", background: "transparent", color: "white"}}>
+        <Col md={"auto"} className="mb-5">
+            <Card style={{width: 220, cursor: "pointer", background: "transparent", color: "white", border: 0}}>
                 <div onMouseEnter={() => setCartIconStyle({...cartIconStyle, opacity: 1})}
                      onMouseLeave={() => setCartIconStyle({...cartIconStyle, opacity: 0})}
                 >
@@ -61,7 +49,7 @@ const GameItem = ({game, onAddItemHandler}) => {
                         </OverlayTrigger>
 
                     </div>
-                    <Card.Img variant="top" src={"http://localhost:4444/" + game.img} style={{height: 250, objectFit: "cover", borderRadius: 5}}
+                    <Card.Img variant="top" src={"http://localhost:4444/" + game.cardImg} style={{height: 300, objectFit: "cover", borderRadius: 5}}
                               onClick={() => navigate(GAME_ROUTE + "/" + game._id)}
                     />
                     {/*<Image width={200} height={250} src={"http://localhost:4444/" + game.img} style={{objectFit: "cover"}}*/}
@@ -69,8 +57,8 @@ const GameItem = ({game, onAddItemHandler}) => {
                     {/*/>*/}
                 </div>
                 <div onClick={() => navigate(GAME_ROUTE + "/" + game._id)}>
-                    <div style={{marginTop: 15}}>{game.title}</div>
-                    <div style={{marginTop: 5}}>{game.price.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{game.price !== "Free" && " KZT"}</div>
+                    <div style={{marginTop: 15, fontSize: '1.2em'}}>{game.title}</div>
+                    <div style={{marginTop: 5, textAlign: 'right', fontSize: '1.1em'}}>{game.price.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{game.price !== "Free" && " KZT"}</div>
                 </div>
             </Card>
         </Col>

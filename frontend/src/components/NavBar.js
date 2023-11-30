@@ -22,7 +22,7 @@ const NavBar = observer(() => {
     }
 
     return (
-        <Navbar bg="dark" variant="dark">
+        <Navbar style={{background: "#18181C"}} variant="dark">
             <Container>
                 <NavLink style={{color: "white", textDecoration: "none", display: "flex", alignItems: "center"}} to={SHOP_ROUTE}>
                     <img src="https://media.tenor.com/xzjlrhYq_lQAAAAj/cat-nyan-cat.gif" style={{height: "4rem", marginRight: 20}}/>

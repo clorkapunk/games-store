@@ -21,17 +21,6 @@ const ConsoleItem = ({console, onAddItemHandler}) => {
         borderRadius: 10
     })
 
-    const [cartTextStyle, setCartTextStyle] = useState({
-        fontSize: "0.85rem",
-        background: "#212529",
-        color: "white",
-        paddingInline: 10,
-        borderRadius: 5,
-        marginRight: 5,
-        opacity: 0,
-        display: "flex",
-        transition: "opacity 0.3s"
-    })
 
     const renderTooltip = (props) => (
         <Tooltip id="button-tooltip" {...props}>
@@ -43,12 +32,13 @@ const ConsoleItem = ({console, onAddItemHandler}) => {
     const navigate = useNavigate()
 
     return (
-        <Col md={3} className="mt-4 mb-3">
-            <Card style={{width: 200, cursor: "pointer", background: "transparent", color: "white"}}>
+        <Col md={"auto"} className="mt-4 mb-3">
+            <Card className="consoleItem" style={{width: 400, cursor: "pointer", background: "transparent", color: "white", border: 0}}>
                 <div onMouseEnter={() => setCartIconStyle({...cartIconStyle, opacity: 1})}
                      onMouseLeave={() => setCartIconStyle({...cartIconStyle, opacity: 0})}
                 >
-                    <div style={{...cartIconStyle,}} onClick={() => {
+                    <div style={{...cartIconStyle,}}
+                         onClick={() => {
                         onAddItemHandler(console._id, type)
                     }}>
                         <OverlayTrigger
@@ -56,7 +46,7 @@ const ConsoleItem = ({console, onAddItemHandler}) => {
                             delay={{show: 100, hide: 200}}
                             overlay={renderTooltip}
                         >
-                            <Image style={{height: "100%", filter: "invert(100%)"}} src={cartIcon}/>
+                            <Image style={{height: "100%", filter: "invert(100%)"}}  src={cartIcon}/>
                         </OverlayTrigger>
 
                     </div>
@@ -64,9 +54,9 @@ const ConsoleItem = ({console, onAddItemHandler}) => {
                               onClick={() => navigate(CONSOLE_ROUTE + "/" + console._id)}
                     />
                 </div>
-                <div onClick={() => navigate(CONSOLE_ROUTE + "/" + console._id)}>
-                    <div style={{marginTop: 15}}>{console.title}</div>
-                    <div style={{marginTop: 5}}>{console.price.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{console.price !== "Free" && " KZT"}</div>
+                <div onClick={() => navigate(CONSOLE_ROUTE + "/" + console._id)} style={{paddingInline: 10}}>
+                    <div style={{marginTop: 10, fontSize: '1.3em'}}>{console.title}</div>
+                    <div style={{marginTop: 5, marginBottom: 10, textAlign: 'right', fontSize: '1.1em'}}>{console.price.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{console.price !== "Free" && " KZT"}</div>
                 </div>
             </Card>
         </Col>
