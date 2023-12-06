@@ -66,6 +66,8 @@ const TypeBar = observer(() => {
                             <>
                                 <div style={{paddingInline: 10, paddingBlock: 10, background: '#202020', color: 'white', cursor: 'pointer'}}
                                      onClick={() => {
+                                         setInput("")
+                                         setStyle(prevState => {return {...prevState, padding: 0}})
                                          navigate(GAME_ROUTE + "/" + item._id)
                                      }
                                 }
@@ -85,7 +87,12 @@ const TypeBar = observer(() => {
                         }).map(item =>
                             <>
                                 <div style={{paddingInline: 10, paddingBlock: 10, background: '#202020', color: 'white', cursor: 'pointer'}}
-                                     onClick={() => navigate(CONSOLE_ROUTE + "/" + item._id)}
+                                     onClick={() => {
+                                         setInput("")
+                                         setStyle(prevState => {return {...prevState, padding: 0}})
+                                         navigate(CONSOLE_ROUTE + "/" + item._id)
+                                     }
+                                }
                                 >
                                     {item.title}
                                     <hr style={{margin: 0, border: 0, background: "white", height: 1, opacity: 0.6, marginTop: 3  }}/>

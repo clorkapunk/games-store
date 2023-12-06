@@ -25,3 +25,16 @@
     font-size: 1.2em;
 }
 
+.dropdown-menu {
+    background: #0e0e11 !important;
+}
+
+.dropdown-item:hover {
+    opacity: 1 !important;
+}
+
+.list-group-item {
+    background: transparent !important;
+    border: 0;
+    cursor: pointer;
+}

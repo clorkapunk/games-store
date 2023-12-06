@@ -3,10 +3,12 @@ import {observer} from "mobx-react-lite";
 import {Context} from "../index";
 import {Button, Row} from "react-bootstrap";
 import BasketItem from "./BasketItem";
+import {useNavigate} from "react-router-dom";
 
 const BasketList = observer(({onDelete}) => {
     const {content} = useContext(Context)
     const [cost, setCost] = useState(0)
+    const navigate = useNavigate()
 
     let itemsTemp = []
     const items = JSON.parse(sessionStorage.getItem("basket"))
@@ -59,7 +61,7 @@ const BasketList = observer(({onDelete}) => {
                                     onDeleteHandler={onDelete}/>
                     )}
                 </div>}
-            {content.basket.length === 0 && <div>No items</div>}
+            {content.basket.length === 0 && <div style={{color: 'white'}}>No items, go <a style={{color: 'lightblue', textDecoration: 'underline', cursor: 'pointer'}} onClick={() => navigate('/')}>add</a> something!</div>}
             {content.basket.length > 0 && <div style={{
                 textAlign: "right",
                 color: 'white',

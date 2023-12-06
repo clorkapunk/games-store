@@ -3,7 +3,7 @@ import {
     BASKET_ROUTE,
     CONSOLE_ROUTE,
     GAME_ROUTE,
-    LOGIN_ROUTE,
+    LOGIN_ROUTE, PROFILE_ROUTE,
     REGISTRATION_ROUTE,
     SHOP_ROUTE
 } from "./utils/consts";
@@ -13,6 +13,7 @@ import Basket from "./pages/Basket";
 import Auth from "./pages/Auth";
 import GamePage from "./pages/GamePage";
 import ConsolePage from "./pages/ConsolePage";
+import Profile from "./pages/Profile";
 
 export const authRoutes = [
     {
@@ -22,6 +23,10 @@ export const authRoutes = [
     {
         path: BASKET_ROUTE + '/:id',
         Component: <Basket/>
+    },
+    {
+        path: PROFILE_ROUTE + '/:id',
+        Component: <Profile/>
     }
 ]
 

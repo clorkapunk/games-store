@@ -5,6 +5,7 @@ import {useParams} from "react-router-dom";
 import {fetchConsoleById, fetchGameById, fetchGames, putItemToBasket} from "../http/contentAPI";
 import {login} from "../http/userAPI";
 import {Context} from "../index";
+import TypeBar from "../components/TypeBar";
 
 const ConsolePage = observer(() => {
     const {user, content} = useContext(Context)
@@ -45,7 +46,12 @@ const ConsolePage = observer(() => {
 
 
     return (
-        <Container className="mt-5 mb-5 w-75" fluid>
+        <Container className="mb-5 w-75" fluid>
+            <Row className="d-flex mb-3 justify-content-between" style={{position: 'sticky', top: 0, zIndex: 999}}>
+                <Col md={12} style={{padding: 0}}>
+                    <TypeBar/>
+                </Col>
+            </Row>
             <Row className="d-flex justify-content-md-between" style={{color: 'white'}}>
                 <Col md={7} style={{padding:0}}>
                     <Image src={'http://localhost:4444/' + console.img}

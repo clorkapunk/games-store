@@ -60,7 +60,7 @@ const GamePage = observer(() => {
                         <Image src={"http://localhost:4444/" + game.mainImg} style={{
                             borderRadius: 10,
                             width: "100%",
-                            height: 600,
+                            height: 500,
                             objectFit: "cover",
                             padding: 0
                         }}/>
