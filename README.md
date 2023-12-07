@@ -1,1 +1,1 @@
-# games-store
+# Web Technologies final project
