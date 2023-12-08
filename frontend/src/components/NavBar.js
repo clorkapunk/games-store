@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useState} from 'react';
 import {Context} from "../index";
 import {Button, Container, Nav, Navbar, NavDropdown} from "react-bootstrap";
-import {ADMIN_ROUTE, BASKET_ROUTE, LOGIN_ROUTE, PROFILE_ROUTE, SHOP_ROUTE} from "../utils/consts";
+import {ADMIN_ROUTE, BASKET_ROUTE, DISTRIBUTION_ROUTE, LOGIN_ROUTE, PROFILE_ROUTE, SHOP_ROUTE} from "../utils/consts";
 import {NavLink, useLocation} from "react-router-dom";
 import {observer} from "mobx-react-lite";
 import {useNavigate} from "react-router-dom";
@@ -25,12 +25,23 @@ const NavBar = observer(() => {
     return (
         <Navbar style={{background: "#18181C"}} variant="dark">
             <Container>
-                <NavLink style={{color: "white", textDecoration: "none", display: "flex", alignItems: "center"}}
-                         to={SHOP_ROUTE}>
-                    <img src="https://media.tenor.com/xzjlrhYq_lQAAAAj/cat-nyan-cat.gif"
-                         style={{height: "4rem", marginRight: 20}}/>
-                    <div style={{fontSize: "2rem"}}>SusStore</div>
-                </NavLink>
+                <div style={{display: 'flex'}}>
+                    <NavLink style={{color: "white", textDecoration: "none", display: "flex", alignItems: "center", marginRight: 40}}
+                             to={SHOP_ROUTE}>
+                        <img src="https://media.tenor.com/xzjlrhYq_lQAAAAj/cat-nyan-cat.gif"
+                             style={{height: "4rem", marginRight: 20}}/>
+                        <div style={{fontSize: "2rem", display: "flex", alignItems: "center"}}>SusStore</div>
+                    </NavLink>
+                    <Nav.Link
+                            active={location.pathname.substring(1).split('/')[0] === "distribution"}
+                            className="my-navbar-item"
+                            style={{color: 'white', opacity: 0.5, fontWeight: 'bold', fontSize: "1.3em", marginBlock: 'auto'}}
+                            onClick={() => navigate(DISTRIBUTION_ROUTE)}
+                        >
+                            Distribution
+                    </Nav.Link>
+                </div>
+
                 {user.isAuth ?
                     <Nav className="ml-auto" style={{color: "white"}}>
                         <NavDropdown
