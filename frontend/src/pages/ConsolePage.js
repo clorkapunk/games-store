@@ -120,7 +120,7 @@ const ConsolePage = observer(() => {
                         <th>Game</th>
                         <th>Average FPS</th>
                         <th>Max FPS</th>
-                        <th>Memory usage</th>
+                        <th  colSpan={2}>Memory usage</th>
                         <th>Total score</th>
                     </tr>
                     </thead>
@@ -131,6 +131,7 @@ const ConsolePage = observer(() => {
                         <td>120</td>
                         <td>200</td>
                         <td>6GB</td>
+                        <td  rowSpan={6} >12GB</td>
                         <td>80/100</td>
                     </tr>
                     <tr>
@@ -150,7 +151,7 @@ const ConsolePage = observer(() => {
                         <td>70/100</td>
                     </tr>
                     <tr>
-                        <td>1</td>
+                        <td>4</td>
                         <td>GTA V</td>
                         <td>120</td>
                         <td>200</td>
@@ -158,7 +159,7 @@ const ConsolePage = observer(() => {
                         <td>80/100</td>
                     </tr>
                     <tr>
-                        <td>2</td>
+                        <td>5</td>
                         <td>CS:GO</td>
                         <td>144</td>
                         <td>345</td>
@@ -166,7 +167,7 @@ const ConsolePage = observer(() => {
                         <td>90/100</td>
                     </tr>
                     <tr>
-                        <td>3</td>
+                        <td>6</td>
                         <td>APEX LEGENDS</td>
                         <td>144</td>
                         <td>220</td>

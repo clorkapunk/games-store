@@ -14,6 +14,7 @@ const NavBar = observer(() => {
         user.setUser({})
         user.setIsAuth(false)
         sessionStorage.removeItem("basket")
+        localStorage.removeItem("token")
         let currectRoute = location.pathname.substring(1).split('/')
         if (currectRoute[0] === "admin" || currectRoute[0] === "basket") {
             navigate(SHOP_ROUTE)
