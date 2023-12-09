@@ -3,16 +3,17 @@
     transition: all 0.1s;
 }
 
-.my-navbar-item:hover {
+.navbar-item-distribution:hover {
     opacity: 1 !important;
     transition: all 0.1s;
 }
 
-.my-navbar-item {
+.navbar-item-distribution {
     padding-inline: 15px;
+    padding-block: 2px;
 }
 
-.my-navbar-item.active {
+.navbar-item-distribution.active {
     opacity: 1 !important;
     background: #404044;
     border-radius: 5px;
@@ -115,13 +116,7 @@
     .distribution-title{
         font-size: 3em;
     }
-    .distribution-card-total{
-        justify-content: center !important;
-    }
 
-    .distribution-card-small{
-        width: 100% !important;
-    }
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
@@ -134,13 +129,7 @@
     .distribution-title{
         font-size: 2em;
     }
-    .distribution-card-total{
-        justify-content: center !important;
-    }
 
-    .distribution-card-small{
-        width: 100% !important;
-    }
 }
 
 
@@ -156,13 +145,57 @@
     }
 }
 
-@media (max-width: 1400px) and (min-width: 1200px){
-    .distribution-card-total{
-        justify-content: center !important;
+@media (max-width: 1400px){
+    .distribution-card-small{
+        width: 100% !important;
     }
 
-    .distribution-card-small{
-        width: 1100px !important;
+    .distribution-card-total{
+        flex-basis: 100%;
     }
+
+
 }
+
+@media (min-width: 1400px){
+    .distribution-card-total{
+        flex-basis: auto;
+    }
+
+    .distribution-card-col{
+        width: 420px !important;
+    }
+
+
+}
+
+.accordion-button {
+    background: transparent;
+    color: white;
+    font-weight: bold;
+    font-size: 1.4rem;
+    padding-inline: 0px;
+}
+
+.accordion-button:not(.collapsed) {
+    background: transparent;
+    color: white;
+    box-shadow: none;
+}
+
+.accordion-button:focus{
+    border: 1px solid white;
+    border-radius: 5px;
+    box-shadow: none;
+}
+
+
+.accordion-button::after{
+    filter: invert(100%);
+}
+
+.accordion-button:not(.collapsed)::after{
+    background-image: var(--bs-accordion-btn-icon);
+}
+
 

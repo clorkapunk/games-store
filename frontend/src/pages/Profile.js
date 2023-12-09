@@ -22,9 +22,9 @@ const Profile = observer(() => {
     function onChangeHandler(event) {
         const {name, value} = event.target
         if (name === 'username') {
-            setUsername(value)
+            setUsername(prevState => {return {...prevState, value: value}})
         } else if (name === 'email') {
-            setEmail(value)
+            setEmail(prevState => {return {...prevState, value: value}})
         }
         else if (name === 'firstname'){
             setFirstname(value)
