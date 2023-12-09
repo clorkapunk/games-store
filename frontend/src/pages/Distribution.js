@@ -6,26 +6,32 @@ import gif from '../assets/distribution-gif.webp'
 const Distribution = () => {
     let cards = [
         {
+            img: 'https://cdn2.unrealengine.com/direct-game-distribution-06596600236d.svg',
             main: 'Reach a Global Audience',
             second: 'Direct distribution to over 230 million Sus users across 187 countries with 16 languages supported.'
         },
         {
+            img: 'https://cdn2.unrealengine.com/video-game-revenue-c74196d72f94.svg',
             main: '88%/12% Revenue Split',
             second: 'Keep 88% of the revenue and monitor product performance with integrated analytics dashboards.'
         },
         {
+            img: 'https://cdn2.unrealengine.com/player-engagement-69f0a2ba31cd.svg',
             main: 'Drive Player Engagement',
             second: 'Tap into store features like wishlists, achievements, store-wide promotions and more!'
         },
         {
+            img: 'https://cdn2.unrealengine.com/epic-games-payment-methods-18cc6135990f.svg',
             main: 'Worldwide E-Commerce',
             second: 'Sus\'s payment service supports 76 payment methods with 47 regional currencies and more on the way.'
         },
         {
+            img: 'https://cdn2.unrealengine.com/epic-games-wallet-2af74bb47a7a.svg',
             main: 'Sus Wallet',
             second: 'Users can load up their Wallet with funds to spend on products and services in the store, now available in more than 140 countries.'
         },
         {
+            img: 'https://cdn2.unrealengine.com/game-ratings-localization-and-affliate-network-benefits-a931a6cb27b8.svg',
             main: 'Additional Benefits',
             second: 'Easy IARC ratings in Sus Developer Portal, request no-cost localization for store pages and activate our Support-A-Creator affiliate network.'
         }
@@ -91,7 +97,7 @@ const Distribution = () => {
                 <Row className="justify-content-between distribution-card-total" md={1} lg={1} xl={1} xxl={3}
                      style={{width: "100%"}}>
                     {cards.map(item =>
-                        <Col className='mt-4 distribution-card-col'
+                        <Col className='mt-3 distribution-card-col'
                              style={{padding: 0,
                                  display: "flex",
                                  justifyContent: "center",
@@ -100,9 +106,9 @@ const Distribution = () => {
                             <div className="distribution-card-small"
                                  style={{
                                      height: "400px",
-                                     width: '420px',
+                                     width: '430px',
                                      border: '1px solid #2A2A2A',
-                                     borderRadius: 10,
+                                     borderRadius: 15,
                                      display: "flex",
                                      flexDirection: "column",
                                      alignItems: 'center',
@@ -111,8 +117,8 @@ const Distribution = () => {
                                      color: "white",
                                      padding: '40px 50px'
                                  }}>
-                                <img style={{width: 100}}
-                                     src="https://media.tenor.com/xzjlrhYq_lQAAAAj/cat-nyan-cat.gif"/>
+                                <img style={{width: 150}}
+                                     src={item.img}/>
                                 <h2>{item.main}</h2>
                                 <h5 style={{opacity: 0.7}}>{item.second}</h5>
                             </div>

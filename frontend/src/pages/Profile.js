@@ -1,5 +1,5 @@
 import React, {useContext, useState} from 'react';
-import {Col, Container, FloatingLabel, ListGroup, Nav, Row, Tab, Form, Button} from "react-bootstrap";
+import {Col, Container, FloatingLabel, ListGroup, Nav, Row, Tab, Form, Button, Navbar} from "react-bootstrap";
 import {autorun} from "mobx";
 import {observer} from "mobx-react-lite";
 import {Context} from "../index";
@@ -22,14 +22,16 @@ const Profile = observer(() => {
     function onChangeHandler(event) {
         const {name, value} = event.target
         if (name === 'username') {
-            setUsername(prevState => {return {...prevState, value: value}})
+            setUsername(prevState => {
+                return {...prevState, value: value}
+            })
         } else if (name === 'email') {
-            setEmail(prevState => {return {...prevState, value: value}})
-        }
-        else if (name === 'firstname'){
+            setEmail(prevState => {
+                return {...prevState, value: value}
+            })
+        } else if (name === 'firstname') {
             setFirstname(value)
-        }
-        else if(name === 'lastname'){
+        } else if (name === 'lastname') {
             setLastname(value)
         }
     }
@@ -52,18 +54,20 @@ const Profile = observer(() => {
         <Container className="mt-5" style={{minHeight: "100vh"}}>
             <Row className="d-flex justify-content-center">
                 <Tab.Container id="left-tabs-example" defaultActiveKey="first">
-                    <Row >
-                        <Col sm={3} style={{padding: 0}}>
+                    <Row style={{paddingBottom: 20}}>
+                        <Col md={3} xs={12} style={{padding: 0}}>
                             <Nav variant="pills" className="flex-column" style={{background: "white", borderRadius: 5}}>
                                 <Nav.Item className="profile-settings-item" style={{background: 'white'}}>
-                                    <Nav.Link className="profile-settings-item-link" eventKey="first">Account settings</Nav.Link>
+                                    <Nav.Link className="profile-settings-item-link" eventKey="first">Account
+                                        settings</Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item className="profile-settings-item" style={{background: 'white'}}>
-                                    <Nav.Link className="profile-settings-item-link" eventKey="second">Sus Rewards</Nav.Link>
+                                    <Nav.Link className="profile-settings-item-link" eventKey="second">Sus
+                                        Rewards</Nav.Link>
                                 </Nav.Item>
                             </Nav>
                         </Col>
-                        <Col sm={9} style={{padding: 0}} className="settings-tabs-col">
+                        <Col md={9} xs={12} style={{padding: 0}} className="settings-tabs-col">
                             <Tab.Content style={{background: "white", borderRadius: 5}}>
                                 <Tab.Pane eventKey="first" className="profile-settings-tab">
                                     <h2>Account Settings</h2>
@@ -106,7 +110,8 @@ const Profile = observer(() => {
                                     </FloatingLabel>
 
                                     <h5 style={{fontWeight: "bold", marginTop: 60}}>Personal Details</h5>
-                                    <p style={{opacity: 0.7}}>Manage your name and contact info. These personal details are private and will
+                                    <p style={{opacity: 0.7}}>Manage your name and contact info. These personal details
+                                        are private and will
                                         not be displayed to other users.</p>
                                     <FloatingLabel
                                         controlId="floatingPassword"
@@ -138,12 +143,27 @@ const Profile = observer(() => {
                                 </Tab.Pane>
                                 <Tab.Pane eventKey="second" className="profile-settings-tab">
                                     <h2>Sus Rewards</h2>
-                                    <p style={{opacity:0.7}}>Earn up to 5% back, or more during promotional events, on all your eligible purchases.</p>
-                                    <div style={{marginBottom: 20, width: 300, background: '#F2F2F2', padding: 30, borderRadius: 3, border: '1px solid #E1E1E1'}}>
-                                        <p style={{fontSize: '0.6em', color: "black", fontWeight: 'bold'}}>SUS REWARDS BALANCE</p>
+                                    <p style={{opacity: 0.7}}>Earn up to 5% back, or more during promotional events, on
+                                        all your eligible purchases.</p>
+                                    <div style={{
+                                        marginBottom: 20,
+                                        width: 300,
+                                        background: '#F2F2F2',
+                                        padding: 30,
+                                        borderRadius: 3,
+                                        border: '1px solid #E1E1E1'
+                                    }}>
+                                        <p style={{fontSize: '0.6em', color: "black", fontWeight: 'bold'}}>SUS REWARDS
+                                            BALANCE</p>
                                         <p style={{fontSize: '2em', fontWeight: 'bold'}}>KTZ 0.00</p>
                                     </div>
-                                    <div style={{fontSize: '0.9em',textAlign: 'center', background: '#F2F2F2', padding: 30, borderRadius: 3}}>
+                                    <div style={{
+                                        fontSize: '0.9em',
+                                        textAlign: 'center',
+                                        background: '#F2F2F2',
+                                        padding: 30,
+                                        borderRadius: 3
+                                    }}>
                                         No transactions have been completed that are eligible for Sus Rewards
                                     </div>
                                 </Tab.Pane>

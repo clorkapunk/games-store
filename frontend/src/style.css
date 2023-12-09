@@ -92,11 +92,6 @@
     opacity: 0.7;
 }
 
-@media (min-width: 576px) {
-    .settings-tabs-col{
-        padding-left: 20px !important;
-    }
-}
 
 @media (min-width: 1200px) {
 
@@ -130,7 +125,17 @@
         font-size: 2em;
     }
 
+
+
 }
+
+@media (min-width: 768px) {
+
+    .settings-tabs-col{
+        padding-left: 20px !important;
+    }
+}
+
 
 
 @media (max-width: 768px) {
@@ -143,6 +148,10 @@
     .distribution-title{
         font-size: 1em;
     }
+
+    .settings-tabs-col {
+        padding-top: 20px !important;
+    }
 }
 
 @media (max-width: 1400px){
@@ -154,7 +163,17 @@
         flex-basis: 100%;
     }
 
+}
 
+@media (max-width: 1399px){
+    .collapsed-nav-item {
+        margin-block: 5px !important;
+        margin-inline: 0 !important;
+    }
+
+    .collapsed-nav-item>a {
+        padding-top: 0 !important;
+    }
 }
 
 @media (min-width: 1400px){
@@ -163,7 +182,7 @@
     }
 
     .distribution-card-col{
-        width: 420px !important;
+        width: 430px !important;
     }
 
 

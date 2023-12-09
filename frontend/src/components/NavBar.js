@@ -127,10 +127,10 @@ const NavBar = observer(() => {
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
                     <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="me-auto">
+                        <Nav className="me-auto collapsed-nav-item">
                             <Nav.Link
                                 active={location.pathname.substring(1).split('/')[0] === "distribution"}
-                                className="navbar-item-distribution"
+                                className="navbar-item-distribution "
                                 style={{
                                     color: 'white',
                                     opacity: 0.5,
@@ -146,7 +146,8 @@ const NavBar = observer(() => {
                         {user.isAuth ?
                             <Nav className="ml-auto" style={{color: "white"}}>
                                 <NavDropdown
-                                    style={{border: "0px solid white", borderRadius: 6, marginRight: 5}}
+                                    className=" collapsed-nav-item"
+                                    style={{border: "0px solid white", borderRadius: 6, marginRight: 5, paddingLeft: 15}}
                                     title={user.user.email}
                                     id="navbarScrollingDropdown">
                                     <NavDropdown.Item style={{background: '#0e0e11', color: "white", opacity: 0.5}}
@@ -173,14 +174,14 @@ const NavBar = observer(() => {
                                 {/*</Button>*/}
                                 {user.user.role === "ADMIN" &&
                                     <Button
-                                        className="mx-2"
+                                        className="mx-2 collapsed-nav-item collapsed-nav-button"
                                         variant={"outline-light"}
                                         onClick={() => navigate(ADMIN_ROUTE)}
                                     >
                                         Admin panel
                                     </Button>}
                                 <Button
-                                    className="mx-2"
+                                    className="mx-2 collapsed-nav-item collapsed-nav-button"
                                     variant={"outline-light"}
                                     onClick={() => logOut()}
                                 >
@@ -188,7 +189,7 @@ const NavBar = observer(() => {
                                 </Button>
                             </Nav>
                             :
-                            <Nav className="ml-auto" style={{color: "white"}}>
+                            <Nav className="ml-auto collapsed-nav-item" style={{color: "white"}}>
                                 <Button variant={"outline-light"}
                                         onClick={() => navigate(LOGIN_ROUTE)}>Authorization</Button>
                             </Nav>
