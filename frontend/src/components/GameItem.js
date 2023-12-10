@@ -32,7 +32,7 @@ const GameItem = ({game, onAddItemHandler}) => {
     const navigate = useNavigate()
 
     return (
-        <Col md={"auto"} className="mb-5">
+        <Col md={"auto"} className="mb-5" style={{display: 'flex', justifyContent: 'center', padding: 0}}>
             <Card style={{width: 220, cursor: "pointer", background: "transparent", color: "white", border: 0}}>
                 <div onMouseEnter={() => setCartIconStyle({...cartIconStyle, opacity: 1})}
                      onMouseLeave={() => setCartIconStyle({...cartIconStyle, opacity: 0})}
@@ -66,7 +66,6 @@ const GameItem = ({game, onAddItemHandler}) => {
 };
 
 export default GameItem;
-
 
 
 // <div onMouseEnter={() => setCartIconStyle({...cartIconStyle, opacity: 1})}

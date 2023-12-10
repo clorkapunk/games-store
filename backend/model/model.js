@@ -4,6 +4,9 @@ const db = require('../db');
 const userSchema = new mongoose.Schema({
     email: String,
     password:String,
+    nickname: String,
+    firstname: String,
+    lastname: String,
     role: {
         type: String,
         default: "USER"

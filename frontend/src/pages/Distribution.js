@@ -94,7 +94,7 @@ const Distribution = () => {
                 </div>
             </div>
             <div style={{display: "flex", justifyContent: "center"}}>
-                <Row className="justify-content-between distribution-card-total" md={1} lg={1} xl={1} xxl={3}
+                <Row className="justify-content-between distribution-card-total" xs={1} md={1} lg={1} xl={1} xxl={3}
                      style={{width: "100%"}}>
                     {cards.map(item =>
                         <Col className='mt-3 distribution-card-col'
@@ -165,7 +165,7 @@ const Distribution = () => {
                 <div style={{display: "flex", justifyContent: "center", alignItems: "center", color: "white"}}>
                     <h1 style={{margin: 0}}>Frequently Asked Questions</h1>
                 </div>
-                <Accordion className='mt-3' defaultActiveKey="0" style={{borderRadius: 0}}>
+                <Accordion  className='mt-3 distribution-questions' defaultActiveKey="0" style={{borderRadius: 0}}>
                     {questions.map(item =>
                         <Accordion.Item eventKey={item.id} style={{background: 'transparent', borderRadius: 0, borderBottom: '1px solid #2B2B2B', borderTop: 0, borderInline: 0}}>
                             <Accordion.Header style={{color: 'white'}}>{item.q}</Accordion.Header>

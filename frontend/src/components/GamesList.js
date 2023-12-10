@@ -11,26 +11,40 @@ const GamesList = observer(({addItemToBasket}) => {
     const navigate = useNavigate()
 
     return (
-        <Row className="d-flex justify-content-between">
+        <>
             <Carousel fade className="mb-5" interval={3000}>
                 {content.games.map(game =>
                     <Carousel.Item key={game._id}>
                         <Image text="Third slide"
-                               src={"http://localhost:4444/" + game.mainImg} style={{width: "100%", height: "600px", objectFit: "cover", borderRadius: 5, cursor: "pointer"}}
+                               className='games-carousel'
+                               src={"http://localhost:4444/" + game.mainImg} style={{
+                            width: "100%",
+                            height: "600px",
+                            objectFit: "cover",
+                            borderRadius: 5,
+                            cursor: "pointer"
+                        }}
                                onClick={() => navigate(GAME_ROUTE + "/" + game._id)}
                         />
                         <Carousel.Caption>
-                            <h3 style={{textShadow:
-                                "1px 1px 0 #000, -1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000"}}>{game.title}</h3>
+                            <h3 style={{
+                                textShadow:
+                                    "1px 1px 0 #000, -1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000"
+                            }}>{game.title}</h3>
                         </Carousel.Caption>
                     </Carousel.Item>
                 )}
             </Carousel>
-            <h4 style={{color: "white", marginBottom: 20}}>Best games</h4>
-            {content.games.map(game =>
-                <GameItem key={game._id} game={game} onAddItemHandler={addItemToBasket}/>
-            )}
-        </Row>
+            <h4 className='games-category-title' style={{color: "white", marginBottom: 20, textAlign: "left"}}>Best games</h4>
+            <div style={{display: "flex", justifyContent: "center"}}>
+                <Row xs={1} sm={2} md={3} xl={4} xxl={5} style={{width: "100%"}}
+                     className="d-flex justify-content-between">
+                    {content.games.map(game =>
+                        <GameItem key={game._id} game={game} onAddItemHandler={addItemToBasket}/>
+                    )}
+                </Row>
+            </div>
+        </>
     );
 });
 

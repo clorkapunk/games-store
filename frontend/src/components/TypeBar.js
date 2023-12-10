@@ -9,7 +9,7 @@ import {useNavigate} from "react-router-dom";
 const TypeBar = observer(() => {
     const [input, setInput] = useState('');
     const [style, setStyle] = useState(
-        {position: "absolute", width: "23%", background: '#202020', borderRadius: 5, padding: 0}
+        {position: "absolute", width: "250px", background: '#202020', borderRadius: 5, padding: 0}
     )
     const navigate = useNavigate()
     const {content} = useContext(Context)
@@ -34,15 +34,18 @@ const TypeBar = observer(() => {
 
 
     return (
-        <Nav variant="pills" style={
+        <Nav variant="pills"
+             className='typebarBox'
+             style={
             {
                 background: "#121212",
                 padding: '20px 0 20px 0',
                 display: "flex",
-                alignItems: 'center'
+                alignItems: 'center',
+                flexDirection: 'row'
             }
         } defaultActiveKey="/home">
-            <Nav.Item style={{marginRight: "10px"}}>
+            <Nav.Item style={{marginRight: "10px"}} className="searchbar">
                 <InputGroup>
                     <Form.Control
                         placeholder="Game title, console model..."
@@ -56,7 +59,7 @@ const TypeBar = observer(() => {
                         Search
                     </Button>
                 </InputGroup>
-                <div style={style}>
+                <div style={style} className='searchbar-result'>
                     {
                         content.games.filter(item => {
                             const searchString = input.toLowerCase()

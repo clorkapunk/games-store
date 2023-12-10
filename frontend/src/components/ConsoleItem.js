@@ -32,7 +32,7 @@ const ConsoleItem = ({console, onAddItemHandler}) => {
     const navigate = useNavigate()
 
     return (
-        <Col md={"auto"} className="mt-4 mb-3">
+        <Col md={"auto"} className="mb-5">
             <Card className="consoleItem" style={{width: 400, cursor: "pointer", background: "transparent", color: "white", border: 0}}>
                 <div onMouseEnter={() => setCartIconStyle({...cartIconStyle, opacity: 1})}
                      onMouseLeave={() => setCartIconStyle({...cartIconStyle, opacity: 0})}

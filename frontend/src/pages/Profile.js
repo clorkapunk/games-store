@@ -1,13 +1,15 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {Col, Container, FloatingLabel, ListGroup, Nav, Row, Tab, Form, Button, Navbar} from "react-bootstrap";
 import {autorun} from "mobx";
 import {observer} from "mobx-react-lite";
 import {Context} from "../index";
+import {getUserDetails, updateUserDetails} from "../http/userAPI";
+import {fetchGameById} from "../http/contentAPI";
 
 const Profile = observer(() => {
     const {user} = useContext(Context);
     const [username, setUsername] = useState({
-        value: user.user.id,
+        value: '',
         disabled: true
     })
     const [email, setEmail] = useState(
@@ -18,6 +20,27 @@ const Profile = observer(() => {
     )
     const [firstname, setFirstname] = useState('')
     const [lastname, setLastname] = useState('')
+
+    useEffect(() => {
+        getUserDetails(user.user.id).then(data => {
+            setUsername(prevState => {
+                return {...prevState, value: data.nickname}
+            })
+            setFirstname(data.firstname)
+            setLastname(data.lastname)
+        })
+    }, []);
+
+    function saveChangesButtonHandler() {
+        updateUserDetails(user.user.id, email.value, username.value, lastname, firstname).then(data => {
+                setUsername(prevState => {
+                    return {...prevState, value: data.nickname}
+                })
+                setFirstname(data.firstname)
+                setLastname(data.lastname)
+            })
+    }
+
 
     function onChangeHandler(event) {
         const {name, value} = event.target
@@ -139,7 +162,11 @@ const Profile = observer(() => {
                                             onChange={onChangeHandler}
                                         />
                                     </FloatingLabel>
-                                    <Button style={{width: '100%', height: 50}}>Save changes</Button>
+                                    <Button style={{width: '100%', height: 50}}
+                                        onClick={saveChangesButtonHandler}
+                                    >
+                                        Save changes
+                                    </Button>
                                 </Tab.Pane>
                                 <Tab.Pane eventKey="second" className="profile-settings-tab">
                                     <h2>Sus Rewards</h2>

@@ -30,7 +30,6 @@ const App = observer(() => {
     return (
         <BrowserRouter>
             <NavBar/>
-
             <AppRouter/>
             <div style={{height: 50, background: '#202020', display: 'flex', alignItems: 'center'}}>
                 <p style={{margin: 0, marginLeft: 20, color: '#c4c4c4'}}>Shop verified by egov.kz (joke)</p>

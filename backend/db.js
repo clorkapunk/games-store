@@ -4,7 +4,6 @@ const mongoose = require('mongoose').default;
 const mongoString = process.env.DATABASE_URL
 mongoose.connect(mongoString);
 const conn = mongoose.connection;
-
 conn.on('connected', function() {
     console.log('database is connected successfully');
 });

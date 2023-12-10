@@ -12,7 +12,7 @@ const generateJwt = (_id, email, role) =>{
 
 class userController{
     async registration(req, res, next){
-        const {email, password, role} = req.body
+        const {email, password, nickname, lastname, firstname, role} = req.body
         if(!email || !password){
             return next(ApiError.badRequest("Invalid email or password."))
         }
@@ -21,7 +21,7 @@ class userController{
             return next(ApiError.badRequest('User already registered'))
         }
         const hashPassword = await bcrypt.hash(password, 5)
-        const user = await User.create({email: email, role: role, password: hashPassword})
+        const user = await User.create({email: email, role: role, password: hashPassword, firstname: firstname, lastname: lastname, nickname: nickname})
         const token = generateJwt(user._id, user.email, user.role)
         const basket = await Basket.create({userId: user._id})
         return res.json({token})
@@ -44,6 +44,19 @@ class userController{
     async check(req, res, next){
         const token = generateJwt(req.user._id, req.user.email, req.user.role)
         return res.json({token})
+    }
+
+    async getUserDetails(req, res, next){
+        const {id} = req.params
+        const user = await User.findOne({_id: id})
+        return res.json(user)
+    }
+
+    async changeUserDetails(req, res, next){
+        const {id, email, nickname, lastname, firstname} = req.body
+        let user = await User.findByIdAndUpdate({_id: id}, {email: email, firstname: firstname, lastname: lastname, nickname: nickname})
+        user = await User.findOne({_id: id})
+        return res.json(user)
     }
 
     async test(req, res){

@@ -29,6 +29,10 @@ const GamePage = observer(() => {
 
 
     const addItemToBasket = (id, type) => {
+        if(!user.isAuth) {
+            alert("Your are not logged in!")
+            return
+        }
         putItemToBasket(user.user.id, id, type).then(data => {
             content.setBasket(data.basketItems)
         })

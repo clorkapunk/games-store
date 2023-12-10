@@ -136,6 +136,26 @@
     }
 }
 
+@media (max-width: 575px){
+    .searchbar{
+        padding-left: 16px;
+    }
+
+    .navbar-main{
+        padding-inline: 20px !important;
+    }
+
+    .games-category-title{
+        text-align: center !important;
+    }
+
+    .distribution-questions {
+        margin-inline: 5px;
+    }
+
+
+}
+
 
 
 @media (max-width: 768px) {
@@ -147,6 +167,17 @@
     }
     .distribution-title{
         font-size: 1em;
+    }
+
+    .games-carousel{
+        aspect-ratio: 16/9;
+        height: auto !important;
+    }
+
+    .typebarBox {
+        flex-direction: column !important;
+        align-items: start !important;
+        padding-bottom: 0 !important;
     }
 
     .settings-tabs-col {

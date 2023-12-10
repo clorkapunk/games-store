@@ -26,7 +26,7 @@ const Shop = observer(() => {
 
 
     return (
-        <Container style={{minHeight: "100vh", padding: 0}}>
+        <Container className="content-container" style={{minHeight: "100vh", padding: 0}}>
             <div>
                 <div style={{position: 'sticky', top: 0, zIndex: 999}}>
                     <TypeBar />
