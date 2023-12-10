@@ -1,5 +1,5 @@
 
-# Web Technologies Final Project
+# Web-technologies Final Project
 
 Done by IITU 3rd year student Duisebayev Temirlan (31154)
 
