@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import UserStore from "./store/UserStore";
 import ContentStore from "./store/ContentStore";
-import image from './assets/shopping-cart.png'
 import './style.css'
 
 export const Context = createContext(null)
