@@ -35,6 +35,26 @@ Start the server
   npm start
 ```
 
+
+
+## TEST DATA
+
+You can create your own user, or use one of these:
+
+```bash
+  email: admin@gmail.com
+  password: admin
+  ROLE: ADMIN
+```
+
+```bash
+  email: user1@gmail.com
+  password: password
+  ROLE: USER
+```
+
+
+
 <h3 align="left">Languages and Tools:</h3>
   <a href="https://expressjs.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg" alt="express" width="40" height="40"/> </a>
   <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a>
