@@ -56,12 +56,13 @@ const GamePage = observer(() => {
                     <TypeBar/>
                 </Col>
             </Row>
-            <div style={{fontSize: "3rem", fontWeight: "bold", color: "white"}}>{game.title}</div>
+            <div className="game-page-title" style={{fontSize: "3rem", fontWeight: "bold", color: "white"}}>{game.title}</div>
             <hr style={{background: 'white', height: 2, opacity: 0.8}}/>
-            <Row className="d-flex mt-4 justify-content-between">
-                <Col md={8} style={{}}>
+            <Row className="d-flex mt-4 justify-content-between game-page-row" lg={1} xl={2}>
+                <Col className="game-page-col game-page-main-col" style={{width: "65%"}}>
                     <Row>
-                        <Image src={"http://localhost:4444/" + game.mainImg} style={{
+                        <Image className="game-page-main-img"
+                            src={"http://localhost:4444/" + game.mainImg} style={{
                             borderRadius: 10,
                             width: "100%",
                             height: 500,
@@ -90,7 +91,7 @@ const GamePage = observer(() => {
                         </div>
                     </Row>
                 </Col>
-                <Col md={3} style={{position: 'sticky'}}>
+                <Col className="game-page-col" style={{position: 'sticky', width: "30%"}}>
                     <Row>
                         <Image src={"http://localhost:4444/" + game.smallImg} style={{
                             width: "100%",
@@ -213,8 +214,8 @@ const GamePage = observer(() => {
                     </Row>
                 </Col>
             </Row>
-            <Row style={{marginTop: 100}}>
-                <Col md={8} style={{padding: 0}}>
+            <Row style={{marginTop: 100}} xs={1}>
+                <Col className="game-page-col" style={{padding: 0, width: '65%'}} >
                     <div style={{fontSize: "1.5rem", color: "white", marginBottom: 20}}>{game.title} System
                         Requirements
                     </div>

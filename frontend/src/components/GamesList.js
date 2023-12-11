@@ -37,7 +37,7 @@ const GamesList = observer(({addItemToBasket}) => {
             </Carousel>
             <h4 className='games-category-title' style={{color: "white", marginBottom: 20, textAlign: "left"}}>Best games</h4>
             <div style={{display: "flex", justifyContent: "center"}}>
-                <Row xs={1} sm={2} md={3} xl={4} xxl={5} style={{width: "100%"}}
+                <Row xs={1} sm={2} md={3} lg={3} xl={4} xxl={5} style={{width: "100%"}}
                      className="d-flex justify-content-between">
                     {content.games.map(game =>
                         <GameItem key={game._id} game={game} onAddItemHandler={addItemToBasket}/>

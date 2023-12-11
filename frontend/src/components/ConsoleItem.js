@@ -33,7 +33,7 @@ const ConsoleItem = ({console, onAddItemHandler}) => {
 
     return (
         <Col md={"auto"} className="mb-5">
-            <Card className="consoleItem" style={{width: 400, cursor: "pointer", background: "transparent", color: "white", border: 0}}>
+            <Card className="consoleItem" style={{width: "100%", cursor: "pointer", background: "transparent", color: "white", border: 0}}>
                 <div onMouseEnter={() => setCartIconStyle({...cartIconStyle, opacity: 1})}
                      onMouseLeave={() => setCartIconStyle({...cartIconStyle, opacity: 0})}
                 >

@@ -60,7 +60,7 @@ const RegistrationForm = () => {
                     value={password}
                     onChange={e => setPassword(e.target.value)}
                 />
-                <div className="mt-3 d-flex justify-content-between align-items-center px-3"
+                <div className="mt-3 d-flex justify-content-between align-items-center px-3 login-form"
                      style={{width: "100%"}}>
 
                     <div>

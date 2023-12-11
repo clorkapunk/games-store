@@ -53,7 +53,7 @@ const BasketList = observer(({onDelete}) => {
 
 
     return (
-        <Row className="d-flex p-0 m-0" style={{width: "100%"}}>
+        <Row className="d-flex p-0 m-0 mb-5" style={{width: "100%"}}>
             {content.basket &&
                 <div className="mb-4 mt-2 d-flex flex-column align-items-center">
                     {content.basket.map(item =>

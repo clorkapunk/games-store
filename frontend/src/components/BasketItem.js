@@ -18,9 +18,13 @@ const BasketItem = ({itemId, type, onCostChange, onDeleteHandler}) => {
         price: ""
     })
 
+    const [halfstyle, setHalfstyle] = useState({width: '50%', borderColor: "black", padding: 3, justifyContent: 'space-between'})
+
+
     useEffect(() => {
         if (type === "game") fetchGameById(itemId).then(data => setItem(data))
         else if (type === "console") fetchConsoleById(itemId).then(data => setItem(data))
+        if(type==='game') setHalfstyle(prevState => {return {...prevState, justifyContent: 'end'}})
     }, []);
 
     useEffect(() => {
@@ -55,52 +59,69 @@ const BasketItem = ({itemId, type, onCostChange, onDeleteHandler}) => {
 
 
     return (
-        <ListGroup horizontal style={{width: "100%"}} className="mt-2">
-            <ListGroup.Item className="basketItem" style={{width: "15%", borderColor: "black", padding: 3}} variant="light">
-                <Image src={'http://localhost:4444/' + (type === 'game' ? item.mainImg : item.img)}
-                       style={{width: "100%", height: 100, objectFit: "cover", padding: 5}}/>
-            </ListGroup.Item>
-            <ListGroup.Item className="basketItem" style={{width: "35%", borderColor: "black"}} variant="light">
-                {item.title}
-            </ListGroup.Item>
-            <ListGroup.Item className="basketItem" style={{width: "15%", borderColor: "black", display: "flex", justifyContent: "center"}}
-                            variant="light">
-                {item.price}
-            </ListGroup.Item>
-            <ListGroup.Item className="basketItem" style={{
-                width: "10%",
-                borderColor: "black",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                flexShrink: 0
-            }} variant="light">
-                <Button onClick={changeAmount} name="decrement" variant="outline-light" style={{
-                    height: 20,
-                    width: 20,
-                    padding: 0,
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center"
-                }}>-</Button>
-                <div className="d-flex justify-content-center align-items-center mx-2">{amount}</div>
-                <Button onClick={changeAmount} name="increment" variant="outline-light" style={{
-                    height: 20,
-                    width: 20,
-                    padding: 0,
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center"
-                }}>+</Button>
-            </ListGroup.Item>
-            <ListGroup.Item className="basketItem" style={{width: "15%", borderColor: "black"}} variant="light">
-                {item.price === "Free" ? "0" : (Number.parseFloat(item.price) * amount)} KZT
-            </ListGroup.Item>
-            <ListGroup.Item className="basketItem" style={{width: "10%", borderColor: "black"}} variant="light">
-                <Button onClick={deleteItem} variant="outline-danger">
-                    DELETE
-                </Button>
-            </ListGroup.Item>
+        <ListGroup horizontal style={{width: "100%", justifyContent: 'space-between', background: "#202020"}}
+                   className="mt-2 basket-item-main">
+            <div className="basketItem basket-item-upper" style={{width: "50%", borderColor: "black"}}>
+                <ListGroup.Item style={{width: "30%", color: 'white'}}
+                                variant="light">
+                    <Image className="basket-item-img" src={'http://localhost:4444/' + (type === 'game' ? item.mainImg : item.img)}
+                           style={{width: "100%", height: 100, objectFit: "cover", padding: 5}}/>
+                </ListGroup.Item>
+                <ListGroup.Item className="basketItem" style={{width: "70%", color: 'white'}} variant="light">
+                    {item.title}
+                </ListGroup.Item>
+            </div>
+            <div className="basketItem basket-item-bottom"  style={halfstyle}>
+                {type === 'console' &&
+                    <div className='basket-item-bottom-left' style={{display: "flex", width: '50%'}}>
+                        <ListGroup.Item className="basketItem"
+                                        style={{
+                                            width: "60%",
+                                            borderColor: "black",
+                                            display: "flex",
+                                            justifyContent: "center"
+                                        }}
+                                        variant="light">
+                            {item.price}
+                        </ListGroup.Item>
+                        <ListGroup.Item className="basketItem" style={{
+                            width: "40%",
+                            borderColor: "black",
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            flexShrink: 0
+                        }} variant="light">
+                            <Button onClick={changeAmount} name="decrement" variant="outline-light" style={{
+                                height: 20,
+                                width: 20,
+                                padding: '5px 5px',
+                                display: "flex",
+                                justifyContent: "center",
+                                alignItems: "center"
+                            }}>-</Button>
+                            <div className="d-flex justify-content-center align-items-center mx-2">{amount}</div>
+                            <Button onClick={changeAmount} name="increment" variant="outline-light" style={{
+                                height: 20,
+                                width: 20,
+                                padding: '5px 5px',
+                                display: "flex",
+                                justifyContent: "center",
+                                alignItems: "center"
+                            }}>+</Button>
+                        </ListGroup.Item>
+                    </div>}
+                <div className="basket-item-bottom-right" style={{width: "50%", display: 'flex'}}>
+                    <ListGroup.Item className="basketItem" style={{width: "60%", borderColor: "black", color: 'white'}} variant="light">
+                        {item.price === "Free" ? "0" : (Number.parseFloat(item.price) * amount)} KZT
+                    </ListGroup.Item>
+                    <ListGroup.Item className="basketItem basket-item-delete-button-div" style={{width: "40%", borderColor: "black"}} variant="light">
+                        <Button onClick={deleteItem} className="basket-item-delete-button" variant="danger">
+                            DELETE
+                        </Button>
+                    </ListGroup.Item>
+                </div>
+            </div>
         </ListGroup>
 
     );

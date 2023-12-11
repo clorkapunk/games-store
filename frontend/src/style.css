@@ -1,14 +1,14 @@
-.footer-icon-button:hover{
+.footer-icon-button:hover {
     color: var(--bs-btn-active-color);
     background-color: var(--bs-btn-active-bg);
     border-color: var(--bs-btn-active-border-color);
 }
 
-.footer-icon-button{
+.footer-icon-button {
     width: 40px !important;
 }
 
-.footer-link-header{
+.footer-link-header {
     opacity: 0.5;
 }
 
@@ -57,7 +57,7 @@
 }
 
 .basketItem {
-    background: #202020;
+    background: transparent;
     border: 0 !important;
     color: white !important;
     display: flex;
@@ -115,133 +115,6 @@
     opacity: 0.7;
 }
 
-
-@media (min-width: 1200px) {
-
-    .distribution-title{
-        font-size: 4em;
-    }
-}
-
-@media (min-width: 992px) and (max-width: 1200px) {
-    .distribution-card {
-        aspect-ratio: auto !important;
-    }
-    .distribution-image{
-        display: none !important;
-    }
-
-    .distribution-title{
-        font-size: 3em;
-    }
-
-}
-
-@media (min-width: 768px) and (max-width: 992px) {
-    .distribution-card {
-        aspect-ratio: auto !important;
-    }
-    .distribution-image{
-        display: none !important;
-    }
-    .distribution-title{
-        font-size: 2em;
-    }
-
-
-
-}
-
-@media (min-width: 768px) {
-
-    .settings-tabs-col{
-        padding-left: 20px !important;
-    }
-}
-
-@media (max-width: 575px){
-    .searchbar{
-        padding-left: 16px;
-    }
-
-    .navbar-main{
-        padding-inline: 20px !important;
-    }
-
-    .games-category-title{
-        text-align: center !important;
-    }
-
-    .distribution-questions {
-        margin-inline: 5px;
-    }
-
-
-}
-
-
-
-@media (max-width: 768px) {
-    .distribution-card {
-        aspect-ratio: auto !important;
-    }
-    .distribution-image{
-        display: none !important;
-    }
-    .distribution-title{
-        font-size: 1em;
-    }
-
-    .games-carousel{
-        aspect-ratio: 16/9;
-        height: auto !important;
-    }
-
-    .typebarBox {
-        flex-direction: column !important;
-        align-items: start !important;
-        padding-bottom: 0 !important;
-    }
-
-    .settings-tabs-col {
-        padding-top: 20px !important;
-    }
-}
-
-@media (max-width: 1400px){
-    .distribution-card-small{
-        width: 100% !important;
-    }
-
-    .distribution-card-total{
-        flex-basis: 100%;
-    }
-
-}
-
-@media (max-width: 1399px){
-    .collapsed-nav-item {
-        margin-block: 5px !important;
-        margin-inline: 0 !important;
-    }
-
-    .collapsed-nav-item>a {
-        padding-top: 0 !important;
-    }
-}
-
-@media (min-width: 1400px){
-    .distribution-card-total{
-        flex-basis: auto;
-    }
-
-    .distribution-card-col{
-        width: 430px !important;
-    }
-
-
-}
-
 .accordion-button {
     background: transparent;
     color: white;
@@ -256,19 +129,328 @@
     box-shadow: none;
 }
 
-.accordion-button:focus{
+.accordion-button:focus {
     border: 1px solid white;
     border-radius: 5px;
     box-shadow: none;
 }
 
 
-.accordion-button::after{
+.accordion-button::after {
     filter: invert(100%);
 }
 
-.accordion-button:not(.collapsed)::after{
+.accordion-button:not(.collapsed)::after {
     background-image: var(--bs-accordion-btn-icon);
 }
+
+
+
+@media (max-width: 575px) {
+    .searchbar {
+        padding-left: 16px;
+    }
+
+    .navbar-main {
+        padding-inline: 20px !important;
+    }
+
+
+    .accordion-button {
+        padding-inline: 20px !important;
+    }
+
+    .accordion-collapse{
+        padding-inline: 20px !important;
+    }
+
+    .login-form {
+        flex-direction: column;
+    }
+
+    .login-form > Button {
+        margin-top: 10px;
+    }
+
+    .distribution-card-total{
+        padding-inline: 20px !important;
+    }
+
+    .distribution-top-image {
+        padding-inline: 20px !important;
+    }
+
+    .distribution-community-card{
+        padding-inline: 20px !important;
+    }
+
+    .distribution-community-card-img-div{
+        width: 30%;
+    }
+
+    .distribution-community-card-img {
+        height: 50% !important;
+    }
+
+    .distribution-questions-title {
+        padding-inline: 20px !important;
+    }
+
+    .console-list-row{
+        padding-inline: 20px !important;
+    }
+
+    .basket-item-upper{
+        flex-direction: column;
+        padding-left: 10px !important;
+    }
+
+    .basket-item-upper > * {
+        width: 100% !important;
+    }
+
+    .basket-item-img {
+        height: auto !important;
+        aspect-ratio: 16/9;
+    }
+
+}
+
+@media (min-width: 575px) and (max-width: 768px){
+    .game-item-col {
+        width: 230px !important;
+    }
+
+    .game-item-card {
+        width: 230px !important;
+    }
+
+    .game-item-img{
+        height: 300px !important;
+    }
+
+}
+
+@media (min-width: 768px) {
+
+    .settings-tabs-col {
+        padding-left: 20px !important;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .distribution-card {
+        aspect-ratio: auto !important;
+    }
+
+    .distribution-image {
+        display: none !important;
+    }
+
+    .distribution-title {
+        font-size: 1em;
+    }
+
+    .games-carousel {
+        aspect-ratio: 16/9;
+        height: auto !important;
+    }
+
+    .typebarBox {
+        flex-direction: column !important;
+        align-items: start !important;
+        padding-bottom: 0 !important;
+    }
+
+    .settings-tabs-col {
+        padding-top: 20px !important;
+    }
+
+    .basket-item-bottom {
+        flex-direction: column !important;
+    }
+
+    .basket-item-bottom-left {
+        flex-direction: column;
+        width: 100% !important;
+    }
+
+    .basket-item-bottom-left > * {
+        justify-content: start !important;
+    }
+    .basket-item-bottom-right {
+        width: 100% !important;
+    }
+
+    .basket-item-delete-button-div{
+        justify-content: end !important;
+    }
+
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .distribution-card {
+        aspect-ratio: auto !important;
+    }
+
+    .distribution-image {
+        display: none !important;
+    }
+
+    .distribution-title {
+        font-size: 2em;
+    }
+
+    .game-item-col {
+        width: 220px !important;
+    }
+
+    .game-item-card {
+        width: 220px !important;
+    }
+
+    .game-item-img{
+        height: 300px !important;
+    }
+
+    .consoleItem{
+        width: 340px !important;
+    }
+
+}
+
+@media (max-width: 992px) {
+    .games-category-title {
+        text-align: center !important;
+    }
+
+    .game-page-main-img{
+        aspect-ratio: 16/9;
+        height: auto !important;
+    }
+
+
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .distribution-card {
+        aspect-ratio: auto !important;
+    }
+
+    .distribution-image {
+        display: none !important;
+    }
+
+    .distribution-title {
+        font-size: 3em;
+    }
+
+    .game-item-col {
+        width: 250px !important;
+    }
+
+    .game-item-card {
+        width: 250px !important;
+    }
+
+    .game-item-img{
+        height: 340px !important;
+    }
+
+}
+
+@media (max-width: 1200px) {
+    .game-page-col {
+        width: 100% !important;
+    }
+
+    .game-page-row {
+        flex-direction: column-reverse !important;
+    }
+
+    .game-page-main-col{
+        margin-top: 20px;
+    }
+
+    .game-page-title {
+        font-size: 2rem !important;
+    }
+
+    .basket-item-main{
+        flex-direction: column;
+    }
+
+    .basket-item-upper {
+        width: 100% !important;
+    }
+
+    .basket-item-bottom {
+        width: 100% !important;
+        padding-left: 10px !important;
+    }
+
+}
+
+@media (min-width: 1200px) {
+    .distribution-title {
+        font-size: 4em;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1400px) {
+    .game-item-col {
+        width: 230px !important;
+    }
+
+    .basket-item-delete-button{
+        font-size: 0.6em !important;
+    }
+}
+
+@media (max-width: 1399px) {
+    .collapsed-nav-item {
+        margin-block: 5px !important;
+        margin-inline: 0 !important;
+    }
+
+    .collapsed-nav-item > a {
+        padding-top: 0 !important;
+    }
+}
+
+@media (max-width: 1400px) {
+    .distribution-card-small {
+        width: 100% !important;
+    }
+
+    .distribution-card-total {
+        flex-basis: 100%;
+    }
+
+    .console-page-img {
+        aspect-ratio: 16/10;
+        height: auto !important;
+    }
+
+}
+
+@media (min-width: 1400px) {
+    .distribution-card-total {
+        flex-basis: auto;
+    }
+
+    .distribution-card-col {
+        width: 430px !important;
+    }
+
+    .game-item-col {
+        width: 225px !important;
+    }
+
+
+}
+
+
 
 

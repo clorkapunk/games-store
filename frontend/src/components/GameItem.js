@@ -32,8 +32,8 @@ const GameItem = ({game, onAddItemHandler}) => {
     const navigate = useNavigate()
 
     return (
-        <Col md={"auto"} className="mb-5" style={{display: 'flex', justifyContent: 'center', padding: 0}}>
-            <Card style={{width: 220, cursor: "pointer", background: "transparent", color: "white", border: 0}}>
+        <Col className="mb-5 game-item-col" style={{display: 'flex', justifyContent: 'center', padding: 0}}>
+            <Card className="game-item-card" style={{width: 225, cursor: "pointer", background: "transparent", color: "white", border: 0}}>
                 <div onMouseEnter={() => setCartIconStyle({...cartIconStyle, opacity: 1})}
                      onMouseLeave={() => setCartIconStyle({...cartIconStyle, opacity: 0})}
                 >
@@ -49,7 +49,7 @@ const GameItem = ({game, onAddItemHandler}) => {
                         </OverlayTrigger>
 
                     </div>
-                    <Card.Img variant="top" src={"http://localhost:4444/" + game.cardImg} style={{height: 300, objectFit: "cover", borderRadius: 5}}
+                    <Card.Img variant="top" src={"http://localhost:4444/" + game.cardImg} className="game-item-img" style={{height: 300, objectFit: "cover", borderRadius: 5}}
                               onClick={() => navigate(GAME_ROUTE + "/" + game._id)}
                     />
                     {/*<Image width={200} height={250} src={"http://localhost:4444/" + game.img} style={{objectFit: "cover"}}*/}
