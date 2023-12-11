@@ -147,6 +147,10 @@
 
 
 @media (max-width: 575px) {
+    .profile-settings-rewards-card {
+        width: 100% !important;
+    }
+
     .searchbar {
         padding-left: 16px;
     }
@@ -450,7 +454,3 @@
 
 
 }
-
-
-
-

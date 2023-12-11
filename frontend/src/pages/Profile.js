@@ -172,7 +172,9 @@ const Profile = observer(() => {
                                     <h2>Sus Rewards</h2>
                                     <p style={{opacity: 0.7}}>Earn up to 5% back, or more during promotional events, on
                                         all your eligible purchases.</p>
-                                    <div style={{
+                                    <div
+                                        className="profile-settings-rewards-card"
+                                        style={{
                                         marginBottom: 20,
                                         width: 300,
                                         background: '#F2F2F2',
