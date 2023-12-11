@@ -13,7 +13,7 @@ const GameItem = ({game, onAddItemHandler}) => {
         height: 25,
         right: "0%",
         top: "0%",
-        background: "black",
+        background: "#121212",
         display: "flex",
         padding: 5,
         opacity: 0,

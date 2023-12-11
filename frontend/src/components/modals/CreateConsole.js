@@ -56,13 +56,13 @@ const CreateConsole = ({show, onHide}) => {
         >
             <Modal.Header
                 closeButton
-                style={{background: "black", color: "white", borderColor: "grey"}}
+                style={{background: "#121212", color: "white", borderColor: "grey"}}
             >
                 <Modal.Title id="contained-modal-title-vcenter">
                     Console info
                 </Modal.Title>
             </Modal.Header>
-            <Modal.Body style={{background: "black"}}>
+            <Modal.Body style={{background: "#121212"}}>
                 <Form>
                     <Form.Control
                         style={{marginBlock: 10}}
@@ -138,7 +138,7 @@ const CreateConsole = ({show, onHide}) => {
                 </Form>
             </Modal.Body>
             <Modal.Footer
-                style={{background: "black", borderColor: "grey"}}
+                style={{background: "#121212", borderColor: "grey"}}
             >
                 <Button variant="outline-danger" onClick={onHide}>Close</Button>
                 <Button variant="outline-success" onClick={submitForm}>Add</Button>
